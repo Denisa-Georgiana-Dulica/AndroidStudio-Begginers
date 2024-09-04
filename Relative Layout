@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!--Relative Layout
+        Permite poziționarea elementelor în relație unele cu altele sau cu părțile containerului părinte.
+    Fiecare element poate fi poziționat relativ față de un alt element folosind atribute precum layout_toRightOf,
+    layout_below, layout_alignParentTop. Să presupunem că vrei să creezi un ecran de profil unde o poză de profil
+    este centrată în partea de sus, iar sub ea se află numele utilizatorului, urmat de câteva butoane plasate relativ
+    față de alte elemente. Aici, RelativeLayout poate fi folosit pentru a poziționa elementele în relație cu alte elemente.
+    (de exemplu asez numele util. si butoanele in functie de poza de profil.
+    DACA NU SPECIFIC CUM AR TREBUI SA FIE POZITIONATE UNUL IN FUNCTIE DE CELELALTE, ELEMENTELE UI SE VOR ASEZA UNUL PESTE
+    CELALALT. DE EXEMPLU SPECIFIC PENTRU TEXTVIEW 2 android:layout_below="@id/text1"-->
+
+    <!-- android:layout_centerHorizontal="true" TEXTVIEW-UL SE VA ASEZA CENTRAT PE AXA ORIZONTALA
+         android:layout_alignLeft="@id/text1" TEXTVIEW-UL 2 O SA INCEAPA DIN PARTEA STANGA A TEXTVIEW-ULUI 1
+         THE STARTING OF THE TEXT 2 IS ALIGNED TO THE STARTING OF THE 1-->
+
+    <!-- android:padding="20dp"
+        android:layout_marginTop="30dp" PENTRU SPATIERE-->
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Text 1"
+        android:textSize="32sp"
+
+        android:layout_centerHorizontal="true"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Relative Layout"
+        android:textSize="30sp"
+
+        android:layout_below="@id/text1"
+        android:layout_alignStart="@id/text1"
+        android:padding="20dp"
+        android:layout_marginTop="30dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+</RelativeLayout>

@@ -1,0 +1,69 @@
+package com.example.drawablesshapes;
+
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
+
+import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_main);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+
+    }
+
+    //to make visible the menu
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.my_menu,menu);//inflate -> convert an xml layout into a view object
+        return true;
+    }
+    //ca sa apara meniul in layout-ul principal mergem un values->themes si
+    //pentru parent="Theme.Material3.DayNight.NoActionBar" o sa eliminam NoActionBar
+
+
+    //pentru a selecta o optiune din meniu
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int itemId=item.getItemId();
+        if(itemId==R.id.action_home){
+            Toast.makeText(this,"You selected home",Toast.LENGTH_SHORT).show();
+        }
+        else if(itemId==R.id.action_serch){
+            Toast.makeText(this,"You selected search",Toast.LENGTH_SHORT).show();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
+    //În metoda onCreateOptionsMenu(Menu menu), utilizăm un MenuInflater pentru
+    // a "umfla=converti" (inflate) resursa de meniu definită într-un fișier XML (R.menu.my_menu)
+    // și pentru a o adăuga la meniul de opțiuni al activității.
+
+    /*MenuInflater este o clasă ce face parte din API-ul Android care permite
+    dezvoltatorilor să creeze meniuri în format XML și să le "umfle" (să le convertească)
+     într-un obiect de tip Menu pe care aplicația îl poate utiliza în runtime. */
+
+    /*getMenuInflater(): Acesta este un apel la o metodă a clasei Activity care returnează un obiect
+    MenuInflater.
+
+    inflate(R.menu.my_menu, menu): Această metodă a obiectului MenuInflater convertește fișierul de
+    resurse XML (R.menu.my_menu) într-un obiect de tip Menu și îl adaugă la meniul furnizat ca parametru
+    (menu). Fișierul XML conține definiția structurii meniului, inclusiv elementele sale (<item>) */
+
+}

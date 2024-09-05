@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle"
+    >
+    <solid
+        android:color="#FFC0CB" />
+    <corners
+        android:radius="20dp"/> <!--margini rotunde-->
+    <size android:height="60dp"
+        android:width="150dp"
+        />
+
+</shape>
+<!--Drawable-> New-> Drawable Resource File (FOR CREATING A SHAPE)-->

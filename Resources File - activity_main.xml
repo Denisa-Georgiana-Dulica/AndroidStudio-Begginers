@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/blush_pink"
+
+    tools:context=".MainActivity">
+
+<!--DRAWABLES AND SHAPES-->
+<!--Drawable-> New-> Drawable Resource File FOR CREATING A SHAPE-->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="100dp"
+
+        android:layout_marginEnd="86dp"
+        android:fontFamily="@font/mango"
+
+        android:text="@string/text2"
+        android:textColor="@color/white"
+        android:textSize="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--app:backgroundTint="@null" !!!ESTE APP (PENTRU A DA BUTONULUI CULOAREA FORMEI)-->
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="360dp"
+        android:text="@string/text1"
+        android:textSize="20dp"
+
+        android:background="@drawable/rounded_button"
+        app:backgroundTint="@null"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!--MIPMAP FOLDER - CHANGING THE APP ICON-->
+    <!--NEW LAYOUT: res-> layout-> new -> layout resource file-->
+    <!--NEW APP ICON (android icon on display): res-> mipmap-> new -> image asset (you shouldn't change the name, but you can change the color, image, robot size-->
+
+
+    <!--VALUES FOLDER (STRING,THEMES,COLORS)
+    PENTRU A ADAUGA CULORI: values-> colors.xml-> <color name="blush_pink">#F699CD</color> (we can look for the hex code for colors)
+    PENTRU A ADAUGA UN STRING NOU: string.xml-> <string name="text1">Hello my friends!</string>
+    When we specified text=".." this is hardcoded text and a worning will apear.
+     The best way to introduce the text is with string resources-->
+
+    <!--THEMES FILE
+    we can change the appearance for our app, for example theme light,dark or the color of the intire app
+    <item name="colorPrimary">@color/blush_pink</item> <!-Este culoarea principală a aplicației.Se poate vedea in bara de sus.-->
+
+    <!--Creating menus
+    res-> new -> Android Resourse Directory-> Resource Type -> menu -> ok
+    menu-> new-> Menu Resource File -> give a name -> ok-->
+
+    <!--CREATING FONTS
+    res-> new -> android resource directory -> resource type(font) (download font file .otf or .ttf)-->
+</androidx.constraintlayout.widget.ConstraintLayout>

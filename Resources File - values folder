@@ -1,0 +1,29 @@
+//colors.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blush_pink">#F699CD</color>
+</resources>
+
+//strings.xml
+<resources>
+    <string name="app_name">Drawables &amp; Shapes</string>
+    <string name="text1">Hello my friends!</string>
+    <string name="text2">Resources file!</string>
+</resources>
+
+//themes.xml
+<resources>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.DrawablesShapes" parent="Theme.Material3.DayNight">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/blush_pink</item> <!--Este culoarea principală a aplicației.Se poate vedea in bara de sus.-->
+
+
+    </style>
+
+    <style name="Theme.DrawablesShapes" parent="Base.Theme.DrawablesShapes" />
+</resources>

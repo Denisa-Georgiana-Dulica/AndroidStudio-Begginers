@@ -1,0 +1,92 @@
+package com.example.checkbox;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
+import android.widget.TimePicker;
+import android.widget.Toast;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_main);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+
+
+        CheckBox ck=findViewById(R.id.checkbox);
+        ck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if(isChecked==true)
+                {
+                    Toast.makeText(MainActivity.this,"CheckBox is checked",Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Toast.makeText(MainActivity.this,"CheckBox isn't checked",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        RadioGroup rg=findViewById(R.id.radioGroup);
+        //the method is called when the selected option changes
+        rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                RadioButton rb=findViewById(i); //i va gasi id-ul radio btn ului selectat
+                Toast.makeText(MainActivity.this,"You select: "+rb.getText().toString(),Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        Spinner spinner=findViewById(R.id.spinner);
+        String[] array={"C++","Java","Python"};
+        //ArrayAdapter în Android este o clasă ce adaptează (converteste)
+        // un array de date într-un format care poate fi utilizat de un
+        // component de interfață grafică (UI), cum ar fi un ListView, Spinner.
+        ArrayAdapter<String> adapter=new ArrayAdapter<>(
+                this, android.R.layout.simple_spinner_item,array
+        );
+
+        //aplic adaptorul la spinner
+        spinner.setAdapter(adapter);
+
+
+        TimePicker timepicker=findViewById(R.id.timePicker);
+        timepicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+            @Override
+            public void onTimeChanged(TimePicker timePicker, int hourOfDay, int minutes) {
+                Toast.makeText(MainActivity.this,"Hour: "+hourOfDay+" Minute: "+minutes,Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        Button btn=findViewById(R.id.button);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(getApplicationContext(),SecondActivity.class);
+                startActivity(i);
+            }
+        });
+    }
+}

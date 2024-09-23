@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AndroidComponents"
+        tools:targetApi="31">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <service android:name=".CustomService"/>
+        <receiver
+            android:name=".AirPlaneReceiver"
+            android:exported="true"> <!--receiver-ul poate fi accesat de alte aplicații sau de sistemul Android.-->
+            <intent-filter> <!--ce tipuri de intenții (intenții = Intent) poate intercepta receiver-ul.-->
+                <action android:name="android.intent.action.AIRPLANE_MODE"/> <!-- definim exact ce acțiune dorim să ascultăm.Atunci când se schimbă starea modului avion (ON/OFF), sistemul Android va emite un broadcast de tip android.intent.action.AIRPLANE_MODE.-->
+                </intent-filter>
+                </receiver>
+    </application>
+
+</manifest>

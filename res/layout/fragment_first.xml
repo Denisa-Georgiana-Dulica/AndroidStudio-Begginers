@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FirstFragment"
+    android:background="#009688">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/hello"
+        android:textSize="32dp"
+        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="FIRST FRAGMENT" />
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:textSize="20dp"
+        android:layout_marginTop="100dp"
+        />
+
+
+
+
+</FrameLayout>
+
+<!--FrameLayout este un tip de layout în Android care este folosit pentru a afișa un singur element sau o stivă de elemente
+!! toate elementele plasate într-un FrameLayout sunt așezate una peste alta, având colțul din stânga sus ca punct de referință implicit.
+!! Este util atunci când vrei să suprapui elemente UI, cum ar fi un text peste o imagine-->

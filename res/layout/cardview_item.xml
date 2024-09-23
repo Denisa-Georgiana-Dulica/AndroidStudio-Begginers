@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="20dp"
+    app:cardBackgroundColor="#3A265F"
+    app:cardElevation="20dp"
+    android:layout_margin="20dp"
+    >
+<!-- android:layout_margin="20dp" SETEZ DISTANTA INTRE ELEM DIN CARDVIEW-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Share"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imagine" />
+
+        <ImageView
+            android:id="@+id/imagine"
+            android:layout_width="250dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="150dp"
+            android:src="@drawable/papanasi"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/denumire"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/september"
+            android:text="name"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imagine"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--Shift+ semnul > pentru a aparea ultima linie -->
+    <!-- android:layout_width="0dp" pentru ca textul sa se duca pe randul urmator daca nu incape-->
+    <!--Pentru a putea muta imaginea usor cu constrangeri in interiorul unui cardview, punem elementele in ConstraintLayout -->
+
+</androidx.cardview.widget.CardView>

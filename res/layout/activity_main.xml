@@ -5,14 +5,12 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#283339"
     tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/header"
-        android:layout_width="match_parent"
-        android:layout_height="240sp"
-        android:layout_marginTop="-1dp"
+        android:layout_width="431dp"
+        android:layout_height="247dp"
         android:src="@drawable/header"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,15 +19,11 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:background="#283339"
-        android:layout_marginTop="24dp"
-
         android:layout_height="0dp"
-
+        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header" />
-<!--  android:layout_height="0dp" SE VA PUNE PE TOT ECRANUL DAR NU PESTE HEADER-->
+        app:layout_constraintTop_toBottomOf="@+id/header"></androidx.recyclerview.widget.RecyclerView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
